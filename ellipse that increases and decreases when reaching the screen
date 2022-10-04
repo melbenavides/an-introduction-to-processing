@@ -1,0 +1,25 @@
+int circleSize=0;
+float radius = 0;
+boolean grow = true;
+void setup(){
+  size(200,200);
+  ellipseMode(RADIUS);
+}
+
+void draw(){
+  background(0);
+  stroke(255);
+  fill(175);
+  ellipse(width/2, height/2, radius, radius);
+  if (grow) {
+    radius++;
+    if (radius == 100) {
+      grow = false;
+    }
+  } else {
+    radius--;
+    if (radius == 0) {
+      grow = true;
+    }
+  }
+}
